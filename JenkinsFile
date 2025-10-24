@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build'){
+            steps{
+                echo 'Building...'
+                git branch: 'main', url: 'https://github.com/neversettel582/IIHT_CI-CD_Assignment.git'
+            }
+        }
+        stage('Testing'){
+            steps{
+                echo 'Testing...'
+                bat 'my_script.bat'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo 'Deploying...'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+        success {
+            echo 'Successful Run!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
