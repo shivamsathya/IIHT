@@ -4,7 +4,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building...'
-                git branch: 'main', url: 'https://github.com/neversettel582/IIHT_CI-CD_Assignment.git'
+                git branch: 'main', url: 'https://github.com/shivamsathya/IIHT'
             }
         }
         stage('Testing'){
