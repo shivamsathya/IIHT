@@ -4,7 +4,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building...'
-                git branch: 'main', url: 'https://github.com/shivamsathya/IIHT'
+                git branch: 'main', url: 'https://github.com/shivamsathya/IIHT.git'
             }
         }
         stage('Testing'){
