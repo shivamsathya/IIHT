@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    triggers {
+    // weekly schedule. Runs once every week (Sunday at a hashed hour)
+    cron('H H * * 0')
+    }
     stages{
         stage('Build'){
             steps{
